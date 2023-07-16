@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Socket.io Tutorial</title>
-  </head>
-  <body>
-    <h1>Socket.io Tutorial</h1>
-    <div id="messages"></div>
-    <input id="message-input" type="text" placeholder="Type your message here">
-    <button id="send-button">Send</button>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-      const socket = io();
+import io from 'socket.io';
+
+const socket = io();
 
 socket.on('connect', () => {
   console.log('Connected to server');
@@ -34,7 +24,3 @@ socket.on('message', (message) => {
   messageElement.innerText = message;
   messages.appendChild(messageElement);
 });
-
-    </script>
-  </body>
-</html>
